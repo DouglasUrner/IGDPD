@@ -9,7 +9,7 @@ programming class. The games were created using [Unity](https:unity3d.com) 2017.
 [JetBrains Rider](https://jetbrains.com/rider) IDE. As the examples are completed they are turned into links to the
 individual prototype folders.
 
-* **Chapter 28** Prototype 1: Apple Picker
+* **Chapter 28** [Prototype 1: Apple Picker](https://github.com/DouglasUrner/IGDPD/tree/master/Prototype%201%20-%20Apple%20Picker)
 * **Chapter 29** [Prototype 2: Mission Demolition](https://github.com/DouglasUrner/IGDPD/tree/master/Prototype%202%20-%20Mission%20Demolition)
 * **Chapter 30** Prototype 3: Space SHMUP
 * **Chapter 31** Prototype 3.5: Space SHMUP Plus
