@@ -966,7 +966,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1613197985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1709398008}
+        m_MethodName: SwitchView
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1613197985
@@ -1222,11 +1233,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701f9ac75ffb94e19b76368d9a0d65eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uitLevel: {fileID: 0}
-  uitShots: {fileID: 0}
-  uitButton: {fileID: 0}
-  castlePos: {x: 0, y: 0, z: 0}
-  castles: []
+  uitLevel: {fileID: 1248239511}
+  uitShots: {fileID: 280227682}
+  uitButton: {fileID: 955907528}
+  castlePos: {x: 50, y: -9.5, z: 0}
+  castles:
+  - {fileID: 1417294238049696, guid: 24667cfeb40d246308e5f90bb7013837, type: 2}
+  - {fileID: 1417294238049696, guid: e1235d4bf88544da8a1fb9baa6ae3a64, type: 2}
+  - {fileID: 1417294238049696, guid: 3369a27bc7ff742709f046e318ba81f8, type: 2}
   level: 0
   levelMax: 0
   shotsTaken: 0
