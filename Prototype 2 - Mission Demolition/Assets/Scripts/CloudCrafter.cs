@@ -15,7 +15,34 @@ public class CloudCrafter : MonoBehaviour {
 	private GameObject[] cloudInstances;
 
 	void Awake() {
-		
+		// Make an array big enough to hold all of the Cloud instances
+		cloudInstances = new GameObject[numClouds];
+		// Find the CloudAnchor parent object
+		GameObject anchor = GameObject.Find("CloudAnchor");
+		// Iterate through and make Cloud_s
+		GameObject cloud;
+		for (int i = 0; i < numClouds; i++) {
+			// Make an instance of cloudPrefab
+			cloud = Instantiate<GameObject>(cloudPrefab);
+			// Position cloud
+			Vector3 cPos = Vector3.zero;
+			cPos.x = Random.Range(cloudPosMin.x, cloudPosMax.x);
+			cPos.y = Random.Range(cloudPosMin.y, cloudPosMax.y);
+			// Scale cloud
+			float scaleU = Random.value;
+			float scaleVal = Mathf.Lerp(cloudScaleMin, cloudScaleMax, scaleU);
+			// Smaller clouds (with smaller scaleU) should be nearer the ground
+			cPos.y = Mathf.Lerp(cloudPosMin.y, cPos.y, scaleU);
+			// Smaller clouds should be further away
+			cPos.z = 100 - 90 * scaleU;
+			// Apply these transforms to the cloud
+			cloud.transform.position = cPos;
+			cloud.transform.localScale = Vector3.one * scaleVal;
+			// Make cloud a child of the anchor
+			cloud.transform.SetParent(anchor.transform);
+			// Add the cloud to cloudInstances
+			cloudInstances[i] = cloud;
+		}
 	}
 	
 	void Update() {
