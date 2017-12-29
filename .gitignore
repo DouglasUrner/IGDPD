@@ -1,9 +1,11 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/Assets/AssetStoreTools*
+*/[Ll]ibrary/
+*/[Tt]emp/
+*/[Oo]bj/
+*/[Bb]uild/
+*/[Bb]uilds/
+*/Assets/AssetStoreTools*
+*/Assets/Plugins*
+*/UnityPackageManager
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -23,6 +25,9 @@ ExportedObj/
 *.svd
 *.pdb
 
+# Rider files
+.idea
+
 # Unity3D generated meta files
 *.pidb.meta
 
@@ -32,3 +37,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# MacOS files
+.DS_Store
