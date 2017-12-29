@@ -46,6 +46,21 @@ public class CloudCrafter : MonoBehaviour {
 	}
 	
 	void Update() {
-		
+		// Iterate over each cloud that was created
+		foreach (GameObject cloud in cloudInstances) {
+			// Get the cloud scale and position
+			float scaleVal = cloud.transform.localScale.x;
+			Vector3 cPos = cloud.transform.position;
+			// Move larger clouds faster
+			cPos.x -= scaleVal * Time.deltaTime * cloudSpeedMult;
+			
+			// If a cloud has moved too far to the left
+			if (cPos.x <= cloudPosMin.x) {
+				// Move it to the far right
+				cPos.x = cloudPosMax.x;
+			}
+			// Apply the new position to the cloud
+			cloud.transform.position = cPos;
+		}
 	}
 }
