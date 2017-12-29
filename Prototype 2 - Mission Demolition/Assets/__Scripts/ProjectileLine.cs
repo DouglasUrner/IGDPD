@@ -44,10 +44,62 @@ public class ProjectileLine : MonoBehaviour {
 	}
 
 	public void AddPoint() {
-		
+		// This is called to add a point to the line
+		Vector3 pt = _poi.transform.position;
+		if (points.Count > 0 && (pt - lastPoint).magnitude < minDist) {
+			// If the point isn't far enough away from the last point, it returns
+			return;
+		}
+
+		if (points.Count == 0) { // If this is the launch point...
+			Vector3 launchPosDiff = pt - Slingshot.LAUNCH_POS; // To be defined
+			// ...it adds as extra bit of line to aid aiming later
+			points.Add(pt + launchPosDiff);
+			points.Add(pt);
+			line.positionCount = 2;
+			// Sets the first two points
+			line.SetPosition(0, points[0]);
+			line.SetPosition(1, points[1]);
+			// Enable the LineRenderer
+			line.enabled = true;
+		} else {
+			// Normal behavior of adding a point
+			points.Add(pt);
+			line.positionCount = points.Count;
+			line.SetPosition(points.Count - 1, lastPoint);
+			line.enabled = true;
+		}
+	}
+	
+	// Returns the location of the most recently added point
+	public Vector3 lastPoint {
+		get {
+			if (points == null) {
+				// If there are no points, returns Vector3.zero
+				return (Vector3.zero);
+			}
+			return (points[points.Count - 1]);
+		}
 	}
 	
 	void FixedUpdate() {
-		
+		if (poi == null) {
+			// If there is no poi, search for one
+			if (FollowCam.POI != null) {
+				if (FollowCam.POI.tag == "Projectile") {
+					poi = FollowCam.POI;
+				} else {
+					return; // Return if we didn't find a poi
+				}
+			} else {
+				return; // Return if we didn't find a poi
+			}
+		}
+		// If there is a poi, it's loc is added every FixedUpdate
+		AddPoint();
+		if (FollowCam.POI == null) {
+			// Onec the FollowCam.POI is null, make the local poi null too
+			poi = null;
+		}
 	}
 }
