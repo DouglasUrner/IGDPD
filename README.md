@@ -5,7 +5,7 @@ Game Prototype Examples in Unity and C# from Part III of
 by Jeremy Gibson Bond.
 
 The examples are being built during the winter of 2017-2018 as I evaluate the text for a high school game design and
-programming class. The games were created using [Unity](https:unity3d.com) 2017.3.0f2 and version 2017.3 of the
+programming class. The games were created using [Unity](https:unity3d.com) 2017.3.0f3 and version 2017.3 of the
 [JetBrains Rider](https://jetbrains.com/rider) IDE. As the examples are completed they are turned into links to the
 individual prototype folders.
 
