@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4092844329309072}
   - component: {fileID: 54131347398255294}
   - component: {fileID: 114825151292470128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AppleTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33254704211197252}
   - component: {fileID: 135076072296298258}
   - component: {fileID: 23973177923627448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 33246749298717086}
   - component: {fileID: 136617113584717668}
   - component: {fileID: 23828637619259304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
