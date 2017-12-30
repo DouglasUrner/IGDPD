@@ -6,6 +6,8 @@
   - Naming conventions
   - Pseudocode and comments
   - Tuning in the Inspector
+  - Game controller on the Main Camera
+  - Duplicating scenes for testing
 * Working with GameObjects
   - Creating GameObjects
   - Components
