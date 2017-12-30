@@ -5,11 +5,18 @@
   - Flesh out object before creating prefab
   - Naming conventions
   - Pseudocode and comments
-* Creating GameObjects
+  - Tuning in the Inspector
+* Working with GameObjects
+  - Creating GameObjects
+  - Components
+  - Instantiationg GameObjects
+  - Destroying GameObjects
 * Creating Materials
 * Tags
 * Prefabs
 * Physics - Rigidbody
   - Use gravity
-  - isKinematic  
+  - isKinematic
+  - FixedUpdate
+  - Physics layers
 * Camera Setup
