@@ -11,7 +11,7 @@ individual prototype folders.
 
 * **Chapter 28** [Prototype 1: Apple Picker](https://github.com/DouglasUrner/IGDPD/tree/master/Prototype%201%20-%20Apple%20Picker)
 * **Chapter 29** [Prototype 2: Mission Demolition](https://github.com/DouglasUrner/IGDPD/tree/master/Prototype%202%20-%20Mission%20Demolition)
-* **Chapter 30** Prototype 3: Space SHMUP
+* **Chapter 30** [Prototype 3: Space SHMUP](https://github.com/DouglasUrner/IGDPD/tree/master/Prototype%203%20-%20Space%20SHMUP)
 * **Chapter 31** Prototype 3.5: Space SHMUP Plus
 * **Chapter 32** Prototype 4: Prospector Solitaire
 * **Chapter 33** Prototype 5: Bartok
