@@ -15,7 +15,8 @@ public class WordGame : MonoBehaviour {
 
 	[Header("Set Dynamically")]
 	public GameMode mode = GameMode.preGame;
-
+	public WordLevel currLevel;
+	
 	void Awake() {
 		S = this; // Assign the Singleton
 	}
@@ -29,5 +30,10 @@ public class WordGame : MonoBehaviour {
 
 	public void WordListParseComplete() {
 		mode = GameMode.makeLevel;
+		currLevel = MakeWordLevel();
+	}
+
+	public WordLevel MakeWordLevel(int levelNum = -1) {
+		
 	}
 }
