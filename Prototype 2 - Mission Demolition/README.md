@@ -37,3 +37,7 @@ the game:
 
 * Null reference exception in Unity while Adding More Castles -
 possibly due to deleting the castle from the Hierarchy.
+
+### Bugs
+
+* Castle 3 sometimes collapses on its own shortly after instantiation.
