@@ -21,15 +21,19 @@ public class WordList : MonoBehaviour {
 	private List<String> longWords;
 	private List<String> words;
 
-	private void Awake() {
+	void Awake() {
 		S = this;
 	}
 
-	void Start() {
+	public void Init() {
 		lines = wordListText.text.Split('\n');
 		totalLines = lines.Length;
 
 		StartCoroutine(ParseLines());
+	}
+
+	static public void INIT() {
+		S.Init();
 	}
 
 	// All coroutines have IEnumerator as their return type.
@@ -59,11 +63,13 @@ public class WordList : MonoBehaviour {
 
 				// This yields execution until the next frame
 				yield return null;
-
-				longWordCount = longWords.Count;
-				wordCount = words.Count;
 			}
 		}
+		longWordCount = longWords.Count;
+		wordCount = words.Count;
+			
+		// Send a message to this GameObject to let it know the parse is done
+		gameObject.SendMessage("WordListParseComplete");
 	}
 
 	// These methods allow other classes to access the private List<string>s
