@@ -235,3 +235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
+  currLevel:
+    levelNum: 0
+    longWordIndex: 0
+    word: 
+    subWords: []
