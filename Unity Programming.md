@@ -4,6 +4,13 @@
 
 ## Version Control
 
+Recent articles on working with Unity and Git:
+* [How to Git with Unity](https://robots.thoughtbot.com/how-to-git-with-unity) - Thoughbot, June 2017
+* [GitHub for Unity](https://unity.github.com/) Active project on GitHub
+* [The complete guide to Unity & Git](https://www.gamasutra.com/blogs/TimPettersen/20161206/286981/The_complete_guide_to_Unity__Git.php) - Gamasutra, 2016
+* [Git for Unity Developers](https://www.gamasutra.com/blogs/AlistairDoulin/20150304/237814/Git_for_Unity_Developers.php) - Gamasutra, 2015.
+* [Unity and Git](https://forum.unity.com/threads/unity-and-git.141420) - Unity forum post from 2012
+
 ## Building & Deploying
 
 ### iOS
