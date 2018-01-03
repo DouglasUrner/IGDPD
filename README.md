@@ -15,5 +15,5 @@ individual prototype folders.
 * **Chapter 31** Prototype 3.5: Space SHMUP Plus
 * **Chapter 32** Prototype 4: Prospector Solitaire
 * **Chapter 33** Prototype 5: Bartok
-* **Chapter 34** Prototype 6: Word Game
+* **Chapter 34** [Prototype 6: Word Game](https://github.com/DouglasUrner/IGDPD/tree/master/Prototype%206%20-%20Word%20Game)
 * **Chapter 35** Prototype 7: Dungeon Delver
