@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 33098752430724834}
   - component: {fileID: 64117089283499014}
   - component: {fileID: 23543190223280174}
+  - component: {fileID: 114013551888440190}
   m_Layer: 0
   m_Name: PrefabLetter
   m_TagString: Untagged
@@ -183,3 +184,17 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114013551888440190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1559578318976214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca2dfccf8d3083428ce22d3ce9896a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tMesh: {fileID: 0}
+  tRend: {fileID: 0}
+  big: 0
