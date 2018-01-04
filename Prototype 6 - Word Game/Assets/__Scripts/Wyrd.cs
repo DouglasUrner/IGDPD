@@ -30,6 +30,11 @@ public class Wyrd {
 			}
 			return (letters[0].color);
 		}
+		set {
+			foreach (Letter l in letters) {
+				l.color = value;
+			}
+		}
 	}
 	
 	// Adds a Letter to letters

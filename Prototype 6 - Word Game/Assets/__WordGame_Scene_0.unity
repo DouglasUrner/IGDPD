@@ -243,10 +243,18 @@ MonoBehaviour:
     width: 48
     height: 28
   letterSize: 1.5
-  showAllWyrds: 1
+  showAllWyrds: 0
+  bigLetterSize: 4
+  bigLetterDim: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  bigColorSelected: {r: 1, g: 0.9, b: 0.7, a: 1}
+  bigLetterCenter: {x: 0, y: -16, z: 0}
   mode: 0
   currLevel:
     levelNum: 0
     longWordIndex: 0
     word: 
     subWords: []
+  bigLetters: []
+  bigLettersActive: []
+  testWord: 
+  upperCase: ABCDEFGHIJKLMNOPQRSTUVWXYZ
