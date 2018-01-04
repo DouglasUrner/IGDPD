@@ -19,11 +19,17 @@ public class WordGame : MonoBehaviour {
 	public Rect wordArea = new Rect(-24, 19, 48, 28);
 	public float letterSize = 1.5f;
 	public bool showAllWyrds = true;
+	public float bigLetterSize = 4f;
+	public Color bigLetterDim = new Color(0.8f, 0.8f, 0.8f);
+	public Color bigColorSelected = new Color(1f, 0.9f, 0.7f);
+	public Vector3 bigLetterCenter = new Vector3(0, -16, 0);
 	
 	[Header("Set Dynamically")]
 	public GameMode mode = GameMode.preGame;
 	public WordLevel currLevel;
 	public List<Wyrd> wyrds;
+	public List<Letter> bigLetters;
+	public List<Letter> bigLettersActive;
 
 	private Transform letterAnchor, bigLetterAnchor;
 	
@@ -121,6 +127,7 @@ public class WordGame : MonoBehaviour {
 		// Determine how many rows of Letters will fit on the screen
 		int numRows = Mathf.RoundToInt(wordArea.height / letterSize);
 
+		// Make a Wyrd of each level.subWord
 		for (int i = 0; i < currLevel.subWords.Count; i++) {
 			wyrd = new Wyrd();
 			word = currLevel.subWords[i];
@@ -157,6 +164,71 @@ public class WordGame : MonoBehaviour {
 			if (i % numRows == numRows - 1) {
 				left += (columnWidth + 0.5f) * letterSize;
 			}
+		}
+		
+		// Place the big letters
+		// Initialize the List<>s for big letters
+		bigLetters = new List<Letter>();
+		bigLettersActive = new List<Letter>();
+
+		for (int i = 0; i < currLevel.word.Length; i++) {
+			c = currLevel.word[i];
+			go = Instantiate<GameObject>(prefabLetter);
+			go.transform.SetParent(bigLetterAnchor);
+			lett = go.GetComponent<Letter>();
+			lett.c = c;
+			go.transform.localScale = Vector3.one * bigLetterSize;
+				
+			// Position the Letter
+			pos = new Vector3(0, -100, 0);
+			lett.pos = pos;
+
+			col = bigLetterDim;
+			lett.color = col;
+			lett.visible = true;	// This is always true for big letters
+			lett.big = true;
+			bigLetters.Add(lett);
+		}
+		// Shuffle the big letters
+		bigLetters = ShuffleLetters(bigLetters);
+		
+		// Arrange them on the screen
+		ArrangeBigLetters();
+		
+		// Set the mode to be in-game
+		mode = GameMode.inLevel;
+	}
+	
+	// This method shuffles a List<Letter> randomly and returns the result
+	List<Letter> ShuffleLetters(List<Letter> letts) {
+		List<Letter> newL = new List<Letter>();
+		int ndx;
+		while (letts.Count > 0) {
+			ndx = Random.Range(0, letts.Count);
+			newL.Add(letts[ndx]);
+			letts.RemoveAt(ndx);
+		}
+
+		return (newL);
+	}
+	
+	// This method arranges the big letters on the screen
+	void ArrangeBigLetters() {
+		// The halfWidth allovs the big Letters to be centered
+		float halfWidth = ((float) bigLetters.Count) / 2f - 0.5f;
+		Vector3 pos;
+		for (int i = 0; i < bigLetters.Count; i++) {
+			pos = bigLetterCenter;
+			pos.x += (i - halfWidth) * bigLetterSize;
+			bigLetters[i].pos = pos;
+		}
+		// bigLettersActive
+		halfWidth = ((float) bigLettersActive.Count) / 2f - 0.5f;
+		for (int i = 0; i < bigLettersActive.Count; i++) {
+			pos = bigLetterCenter;
+			pos.x += (i - halfWidth) * bigLetterSize;
+			pos.y += bigLetterSize * 1.25f;
+			bigLettersActive[i].pos = pos;
 		}
 	}
 }
