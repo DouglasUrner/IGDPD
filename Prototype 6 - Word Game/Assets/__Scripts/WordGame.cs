@@ -308,6 +308,7 @@ public class WordGame : MonoBehaviour {
 			subWord = currLevel.subWords[i];
 			if (string.Equals(testWord, subWord)) {
 				HighlightWyrd(i);
+				ScoreManager.SCORE(wyrds[i], 1); // Score the testWord
 				foundTestWord = true;
 			} else if (testWord.Contains(subWord)) {
 				containedWords.Add(i);
@@ -320,6 +321,7 @@ public class WordGame : MonoBehaviour {
 			for (int i = 0; i < containedWords.Count; i++) {
 				ndx = numContained - i - 1;
 				HighlightWyrd(containedWords[ndx]);
+				ScoreManager.SCORE(wyrds[containedWords[ndx]], i + 2);
 			}
 		}
 		ClearBigLettersActive();
