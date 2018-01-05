@@ -151,7 +151,9 @@ public class WordGame : MonoBehaviour {
 				// The % here makes multiple columns line up
 				pos.y -= (i % numRows) * letterSize;
 
+				lett.posImediate = pos + Vector3.up * (20 + i % numRows);
 				lett.pos = pos;
+				lett.timeStart = Time.time + i * 0.05f;
 
 				go.transform.localScale = Vector3.one * letterSize;
 				
@@ -183,7 +185,11 @@ public class WordGame : MonoBehaviour {
 				
 			// Position the Letter
 			pos = new Vector3(0, -100, 0);
+			lett.posImediate = pos;
 			lett.pos = pos;
+			// Increment lett.timeStart to have big letters come in last
+			lett.timeStart = Time.time + currLevel.subWords.Count * 0.05f;
+			lett.easingCurve = Easing.Sin + "0.18"; // Bouncy easing
 
 			col = bigLetterDim;
 			lett.color = col;
